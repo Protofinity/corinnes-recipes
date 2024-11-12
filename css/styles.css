@@ -15,73 +15,45 @@ body {
     background-color: #f9f9f9;
 }
 
+.container {
+    max-width: 1200px;
+    margin: 0 auto; /* Centers the content */
+    padding: 0 20px; /* Add some padding to prevent content from touching edges */
+}
+
 /* Header Styles */
 header {
     background-color: #fff;
     border-bottom: 1px solid #ddd;
-    padding: 20px;
+    padding: 20px 0;
 }
 
-.logo h1 {
+.logo {
+    display: inline-block;
     font-family: 'Playfair Display', serif;
     font-size: 28px;
-    display: inline-block;
 }
 
 nav {
-    display: inline-block;
     float: right;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-}
-
-nav ul li {
-    position: relative;
-    margin-left: 20px;
+    gap: 20px; /* Add some space between links */
 }
 
 nav ul li a {
     text-decoration: none;
     color: #333;
     font-weight: bold;
-    padding: 5px 10px;
+    transition: color 0.3s;
 }
 
 nav ul li a.active,
 nav ul li a:hover {
     color: #ff6f61;
-}
-
-nav ul li ul.dropdown {
-    display: none;
-    position: absolute;
-    top: 30px;
-    left: 0;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    list-style: none;
-    padding: 10px 0;
-}
-
-nav ul li:hover ul.dropdown {
-    display: block;
-}
-
-nav ul li ul.dropdown li {
-    margin: 0;
-}
-
-nav ul li ul.dropdown li a {
-    display: block;
-    padding: 10px 20px;
-    color: #333;
-}
-
-nav ul li ul.dropdown li a:hover {
-    background-color: #f9f9f9;
 }
 
 /* Main Banner Styles */
@@ -97,12 +69,13 @@ nav ul li ul.dropdown li a:hover {
 
 .main-banner::after {
     content: '';
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.6);
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
+    z-index: 0;
 }
 
 .main-banner .banner-content {
@@ -128,12 +101,16 @@ nav ul li ul.dropdown li a:hover {
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.main-banner .btn:hover {
+    background-color: #e85a51;
 }
 
 /* Featured Sections */
 .featured {
-    padding: 50px 20px;
-    background-color: #fff;
+    padding: 50px 0;
 }
 
 .featured h2 {
@@ -143,14 +120,11 @@ nav ul li ul.dropdown li a:hover {
     text-align: center;
 }
 
-.recipe-of-the-day,
-.popular-categories,
-.latest-recipes,
-.subscriber-signup {
+.recipe-of-the-day {
+    text-align: center;
     margin-bottom: 50px;
 }
 
-/* Recipe of the Day */
 .recipe-of-the-day img {
     width: 100%;
     max-width: 600px;
@@ -165,21 +139,34 @@ nav ul li ul.dropdown li a:hover {
 }
 
 .recipe-of-the-day .btn {
-    display: block;
-    margin: 0 auto;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff6f61;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.recipe-of-the-day .btn:hover {
+    background-color: #e85a51;
 }
 
 /* Popular Categories */
-.categories {
+.popular-categories {
+    margin-top: 50px;
+}
+
+.popular-categories .categories {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    gap: 20px;
 }
 
 .category {
-    width: 200px;
+    width: 250px;
     text-align: center;
-    margin-bottom: 20px;
 }
 
 .category i {
@@ -198,79 +185,24 @@ nav ul li ul.dropdown li a:hover {
     color: #666;
 }
 
-/* Latest Recipes */
-.recipe-cards {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-.recipe-card {
-    width: 300px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    margin-bottom: 20px;
-    text-align: center;
-    padding: 20px;
-}
-
-.recipe-card img {
-    width: 100%;
-    height: auto;
-    margin-bottom: 15px;
-}
-
-.recipe-card h3 {
-    font-size: 22px;
-    margin-bottom: 15px;
-}
-
-.recipe-card .btn {
-    background-color: #ff6f61;
-    color: #fff;
-    padding: 10px 15px;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-/* Subscriber Signup */
-.subscriber-signup form {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.subscriber-signup input[type="email"] {
-    padding: 10px;
-    width: 300px;
-    font-size: 16px;
-    margin-right: 10px;
-}
-
-.subscriber-signup button {
-    padding: 10px 20px;
-    background-color: #ff6f61;
-    color: #fff;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-}
-
 /* Footer Styles */
 footer {
     background-color: #333;
     color: #fff;
-    padding: 40px 20px;
+    padding: 40px 0;
+    text-align: center;
 }
 
 .footer-columns {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    gap: 20px;
 }
 
 .footer-columns .column {
     width: 22%;
-    margin-bottom: 20px;
+    text-align: left;
 }
 
 .footer-columns h3 {
@@ -289,17 +221,27 @@ footer {
 .footer-columns ul li a {
     color: #fff;
     text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-columns ul li a:hover {
+    color: #ff6f61;
 }
 
 .footer-columns .social-icons a {
     color: #fff;
     margin-right: 10px;
     font-size: 18px;
+    transition: color 0.3s;
+}
+
+.footer-columns .social-icons a:hover {
+    color: #ff6f61;
 }
 
 footer p {
-    text-align: center;
     margin-top: 20px;
+    font-size: 14px;
 }
 
 /* Buttons */
@@ -310,325 +252,32 @@ footer p {
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
+    transition: background-color 0.3s;
 }
 
-/* Recipe Page Styles */
-.recipe-page {
-    padding: 50px 20px;
-    background-color: #fff;
-}
-
-.recipe-header {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.recipe-header h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
-}
-
-.recipe-header .rating {
-    font-size: 18px;
-    color: #ff6f61;
-    margin-bottom: 10px;
-}
-
-.recipe-header .social-share a {
-    color: #333;
-    margin-right: 10px;
-    font-size: 18px;
-}
-
-.recipe-content img {
-    width: 100%;
-    max-width: 600px;
-    display: block;
-    margin: 0 auto 20px;
-}
-
-.recipe-details {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin-bottom: 30px;
-}
-
-.recipe-details .detail {
-    width: 150px;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.recipe-details h4 {
-    font-size: 16px;
-    margin-bottom: 5px;
-}
-
-.ingredients,
-.instructions {
-    max-width: 800px;
-    margin: 0 auto 30px;
-}
-
-.ingredients li,
-.instructions li {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
-.nutrition-table {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto 30px;
-    border-collapse: collapse;
-}
-
-.nutrition-table th,
-.nutrition-table td {
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: left;
-}
-
-.comments-section {
-    max-width: 800px;
-    margin: 0 auto 30px;
-}
-
-.comment {
-    margin-bottom: 20px;
-}
-
-.comment p {
-    margin-bottom: 10px;
-}
-
-.comment-form label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-.comment-form input,
-.comment-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-}
-
-.comment-form button {
-    padding: 10px 20px;
-    background-color: #ff6f61;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-}
-
-/* Blog Page Styles */
-.blog-page {
-    padding: 50px 20px;
-    background-color: #fff;
-}
-
-.blog-articles {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-.blog-post {
-    width: 300px;
-    background-color: #fff;
-    margin-bottom: 30px;
-    text-align: center;
-}
-
-.blog-post img {
-    width: 100%;
-    height: auto;
-    margin-bottom: 15px;
-}
-
-.blog-post h3 {
-    font-size: 22px;
-    margin-bottom: 10px;
-}
-
-.blog-post p {
-    font-size: 16px;
-    margin-bottom: 15px;
-}
-
-.blog-search {
-    text-align: center;
-    margin-top: 30px;
-}
-
-.blog-search form {
-    display: inline-block;
-}
-
-.blog-search input[type="text"] {
-    padding: 10px;
-    width: 300px;
-    margin-right: 10px;
-}
-
-.blog-search button {
-    padding: 10px 20px;
-    background-color: #ff6f61;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-}
-
-/* About Page Styles */
-.about-page {
-    padding: 50px 20px;
-    background-color: #fff;
-}
-
-.about-content {
-    max-width: 800px;
-    margin: 0 auto 50px;
-    text-align: center;
-}
-
-.about-content img {
-    width: 200px;
-    border-radius: 50%;
-    margin-bottom: 20px;
-}
-
-.about-content p {
-    font-size: 18px;
-    margin-bottom: 20px;
-}
-
-.team-members {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-.team-member {
-    width: 200px;
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.team-member img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-bottom: 15px;
-}
-
-.team-member h3 {
-    font-size: 20px;
-    margin-bottom: 5px;
-}
-
-.team-member p {
-    font-size: 16px;
-    color: #666;
-}
-
-/* Contact Page Styles */
-.contact-page {
-    padding: 50px 20px;
-    background-color: #fff;
-    text-align: center;
-}
-
-.contact-form {
-    max-width: 600px;
-    margin: 0 auto 30px;
-}
-
-.contact-form label {
-    display: block;
-    text-align: left;
-    margin-bottom: 5px;
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-}
-
-.contact-form button {
-    padding: 10px 20px;
-    background-color: #ff6f61;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-}
-
-.additional-contact {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.additional-contact p {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
-.additional-contact .social-icons a {
-    display: inline-block;
-    margin-right: 10px;
-    color: #333;
-    font-size: 18px;
-    text-decoration: none;
-}
-
-.additional-contact .social-icons a:hover {
-    color: #ff6f61;
+.btn:hover {
+    background-color: #e85a51;
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-    nav {
-        float: none;
-    }
-
     nav ul {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    nav ul li {
-        margin-left: 0;
-        margin-bottom: 10px;
-    }
-
-    .categories,
-    .recipe-cards,
-    .recipe-details,
-    .blog-articles,
-    .team-members {
         flex-direction: column;
         align-items: center;
     }
 
-    .category,
-    .recipe-card,
-    .blog-post,
-    .team-member {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
+    .popular-categories .categories,
     .footer-columns {
         flex-direction: column;
         align-items: center;
     }
 
+    .category,
     .footer-columns .column {
         width: 100%;
-        margin-bottom: 20px;
+    }
+
+    .recipe-of-the-day img {
+        max-width: 100%;
     }
 }
