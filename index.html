@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Corinne's Recipes - Home</title>
@@ -9,32 +10,24 @@
     <!-- Font Awesome for Icons -->
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
     <!-- Header -->
     <header>
-        <div class="logo">
-            <h1><i class="fas fa-utensils"></i> Corinne's Recipes</h1>
+        <div class="container">
+            <div class="logo">
+                <h1><i class="fas fa-utensils"></i> Corinne's Recipes</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="recipes.html">Recipes</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li>
-                    <a href="recipes.html">Recipes</a>
-                    <ul class="dropdown">
-                        <li><a href="#">Appetizers</a></li>
-                        <li><a href="#">Main Courses</a></li>
-                        <li><a href="#">Desserts</a></li>
-                        <li><a href="#">Beverages</a></li>
-                        <li><a href="#">Vegetarian</a></li>
-                        <li><a href="#">Vegan</a></li>
-                        <li><a href="#">Gluten-Free</a></li>
-                    </ul>
-                </li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
     </header>
 
     <!-- Main Banner -->
@@ -47,7 +40,7 @@
     </section>
 
     <!-- Featured Sections -->
-    <section class="featured">
+    <section class="featured container">
         <!-- Recipe of the Day -->
         <div class="recipe-of-the-day">
             <h2>Recipe of the Day: Spicy Thai Noodle Salad</h2>
@@ -82,47 +75,11 @@
                 </div>
             </div>
         </div>
-
-        <!-- Latest Recipes -->
-        <div class="latest-recipes">
-            <h2>Latest Recipes</h2>
-            <div class="recipe-cards">
-                <!-- Recipe Card 1 -->
-                <div class="recipe-card">
-                    <img src="images/avocado-toast.jpg" alt="Avocado Toast">
-                    <h3>Avocado Toast with Poached Eggs</h3>
-                    <a href="recipe.html" class="btn">View Recipe</a>
-                </div>
-                <!-- Recipe Card 2 -->
-                <div class="recipe-card">
-                    <img src="images/vegan-brownies.jpg" alt="Vegan Brownies">
-                    <h3>Decadent Vegan Brownies</h3>
-                    <a href="recipe.html" class="btn">View Recipe</a>
-                </div>
-                <!-- Recipe Card 3 -->
-                <div class="recipe-card">
-                    <img src="images/quinoa-salad.jpg" alt="Quinoa Salad">
-                    <h3>Colorful Quinoa Salad</h3>
-                    <a href="recipe.html" class="btn">View Recipe</a>
-                </div>
-            </div>
-            <a href="recipes.html" class="btn">View All Recipes</a>
-        </div>
-
-        <!-- Subscriber Signup -->
-        <div class="subscriber-signup">
-            <h2>Join Our Newsletter</h2>
-            <p>Get weekly recipes and cooking tips straight to your inbox.</p>
-            <form action="#" method="post">
-                <input type="email" name="email" placeholder="Enter your email" required>
-                <button type="submit">Subscribe</button>
-            </form>
-        </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="footer-columns">
+        <div class="footer-columns container">
             <div class="column">
                 <h3>Explore</h3>
                 <ul>
@@ -150,10 +107,10 @@
             <div class="column">
                 <h3>Follow Us</h3>
                 <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook-f"></i> Facebook</a>
-                    <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
-                    <a href="#"><i class="fab fa-pinterest-p"></i> Pinterest</a>
-                    <a href="#"><i class="fab fa-youtube"></i> YouTube</a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
         </div>
@@ -163,4 +120,5 @@
     <!-- Link to JavaScript -->
     <script src="js/scripts.js"></script>
 </body>
+
 </html>
